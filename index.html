@@ -1,15 +1,70 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>My Spaced Repetition App</title>
+    <style>
+      .purple {
+        background-color: purple;
+        width: 400px;
+        height: 400px;
+        display: inline-block;
+        margin: 10px;
+      }
+    </style>
   </head>
   <body>
-    <!-- Load index.html from the "neu" subdirectory -->
-    <div id="app-container"></div>
-    <script src="neu/index.html"></script>
+    <!-- Render the contents of neu/index.html -->
+    <div class="purple">
+      <object data="neu/index.html" type="text/html" width="100%" height="100%">
+        <p>Your browser does not support iframes.</p>
+      </object>
+    </div>
 
-    <!-- Load app.js from the "neu/js" subdirectory -->
-    <script src="neu/js/app.js"></script>
+    <!-- Display a simple JavaScript app with graphics -->
+    <div class="purple">
+      <canvas id="canvas1"></canvas>
+      <script>
+        const canvas = document.getElementById('canvas1');
+        const context = canvas.getContext('2d');
+        context.fillStyle = 'white';
+        context.fillRect(0, 0, canvas.width, canvas.height);
+        context.fillStyle = 'red';
+        context.fillRect(10, 10, 100, 100);
+      </script>
+    </div>
+
+    <!-- Display another simple JavaScript app with graphics -->
+    <div class="purple">
+      <canvas id="canvas2"></canvas>
+      <script>
+        const canvas = document.getElementById('canvas2');
+        const context = canvas.getContext('2d');
+        context.fillStyle = 'white';
+        context.fillRect(0, 0, canvas.width, canvas.height);
+        context.beginPath();
+        context.arc(100, 100, 50, 0, Math.PI * 2);
+        context.fillStyle = 'blue';
+        context.fill();
+      </script>
+    </div>
+
+    <!-- Display a third simple JavaScript app with graphics -->
+    <div class="purple">
+      <canvas id="canvas3"></canvas>
+      <script>
+        const canvas = document.getElementById('canvas3');
+        const context = canvas.getContext('2d');
+        context.fillStyle = 'white';
+        context.fillRect(0, 0, canvas.width, canvas.height);
+        context.fillStyle = 'green';
+        context.beginPath();
+        context.moveTo(50, 50);
+        context.lineTo(100, 100);
+        context.lineTo(150, 50);
+        context.closePath();
+        context.fill();
+      </script>
+    </div>
   </body>
 </html>
